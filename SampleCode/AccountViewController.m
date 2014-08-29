@@ -78,9 +78,20 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     cell.textLabel.text = cellText;
+    
+//    NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
+//    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
+    UIImage *theImage = [UIImage imageNamed:@"IconF.png"];
+    if (row == 1) {
+        theImage = [UIImage imageNamed:@"IconG.png"];
+    }
+    cell.imageView.image = theImage;
     
     return cell;
 }
