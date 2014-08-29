@@ -18,6 +18,8 @@
 		28480F7F19ADBED2001DBBDB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F7E19ADBED2001DBBDB /* Icon.png */; };
 		28480F8219ADBEE9001DBBDB /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F8019ADBEE9001DBBDB /* Icon-60@2x.png */; };
 		28480F8319ADBEE9001DBBDB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F8119ADBEE9001DBBDB /* Icon@2x.png */; };
+		28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480F8C19AFD2FA001DBBDB /* AccountViewController.m */; };
+		28480F8F19AFD2FA001DBBDB /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */; };
 		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
@@ -59,6 +61,9 @@
 		28480F7E19ADBED2001DBBDB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = SOURCE_ROOT; };
 		28480F8019ADBEE9001DBBDB /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Resources/Icon-60@2x.png"; sourceTree = SOURCE_ROOT; };
 		28480F8119ADBEE9001DBBDB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		28480F8B19AFD2FA001DBBDB /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = SOURCE_ROOT; };
+		28480F8C19AFD2FA001DBBDB /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = SOURCE_ROOT; };
+		28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
 		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
@@ -167,6 +172,9 @@
 		0043C7A41580045B000DF02E /* Social Network Privacy Management */ = {
 			isa = PBXGroup;
 			children = (
+				28480F8B19AFD2FA001DBBDB /* AccountViewController.h */,
+				28480F8C19AFD2FA001DBBDB /* AccountViewController.m */,
+				28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */,
 				D9EE74B3158A8E0500EC1D05 /* AppDelegate.h */,
 				D9EE74B4158A8E0500EC1D05 /* AppDelegate.m */,
 				D92939E217A04DA00024AA91 /* AuthInspectorViewController.h */,
@@ -361,6 +369,7 @@
 				E0681E5F171F46EB0098D356 /* Default-568h@2x.png in Resources */,
 				D9A49D9F1720DD5E009C6DE2 /* Default@2x~iphone.png in Resources */,
 				D9A49DA01720DD5E009C6DE2 /* Default~iphone.png in Resources */,
+				28480F8F19AFD2FA001DBBDB /* AccountViewController.xib in Resources */,
 				2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */,
 				28480F7F19ADBED2001DBBDB /* Icon.png in Resources */,
 				2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */,
@@ -380,6 +389,7 @@
 				D9EE74C2158A8E0500EC1D05 /* AppDelegate.m in Sources */,
 				D9EE74C3158A8E0500EC1D05 /* MasterViewController.m in Sources */,
 				D9EE74C9158A8E0500EC1D05 /* SignInViewController.m in Sources */,
+				28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */,
 				2ABEB957178B3E6C00371CF2 /* EditableCell.m in Sources */,
 				2A5857A2178DCDD000C84F01 /* DataPickerViewController.m in Sources */,
 				2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */,

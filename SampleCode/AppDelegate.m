@@ -20,6 +20,7 @@
 
 #import <GooglePlus/GooglePlus.h>
 #import "MasterViewController.h"
+#import "AccountViewController.h"
 
 @interface AppDelegate () <GPPDeepLinkDelegate>
 
@@ -29,8 +30,10 @@
 
 // DO NOT USE THIS CLIENT ID. IT WILL NOT WORK FOR YOUR APP.
 // Please use the client ID created for you by Google.
+//clientID by project "quick sample" on Google Developer Console
 static NSString * const kClientID =
     @"886332375107-m9uqfghf0j6n447a6pet8dhfu0ncleki.apps.googleusercontent.com";
+
 
 #pragma mark Object life-cycle.
 
@@ -41,12 +44,20 @@ static NSString * const kClientID =
   [GPPSignIn sharedInstance].clientID = kClientID;
 
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  MasterViewController *masterViewController =
-      [[MasterViewController alloc] initWithNibName:@"MasterViewController"
-                                             bundle:nil];
-  self.navigationController =
-      [[UINavigationController alloc]
-          initWithRootViewController:masterViewController];
+//  MasterViewController *masterViewController =
+//      [[MasterViewController alloc] initWithNibName:@"MasterViewController"
+//                                             bundle:nil];
+//  self.navigationController =
+//      [[UINavigationController alloc]
+//          initWithRootViewController:masterViewController];
+    
+    AccountViewController *accountViewController =
+    [[AccountViewController alloc] initWithNibName:@"AccountViewController"
+                                           bundle:nil];
+    self.navigationController =
+    [[UINavigationController alloc]
+     initWithRootViewController:accountViewController];
+    
   self.window.rootViewController = self.navigationController;
   [self.window makeKeyAndVisible];
 
