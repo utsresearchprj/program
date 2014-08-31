@@ -22,6 +22,10 @@
 		28480F8F19AFD2FA001DBBDB /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */; };
 		28480F9119B12A0D001DBBDB /* IconG.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9019B12A0D001DBBDB /* IconG.png */; };
 		28480F9319B13334001DBBDB /* IconF.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9219B13334001DBBDB /* IconF.png */; };
+		28480F9619B13955001DBBDB /* privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9419B13955001DBBDB /* privacy.png */; };
+		28480F9719B13955001DBBDB /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9519B13955001DBBDB /* signin.png */; };
+		28480F9D19B15313001DBBDB /* PrivacySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */; };
+		28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */; };
 		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
@@ -68,6 +72,11 @@
 		28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = SOURCE_ROOT; };
 		28480F9019B12A0D001DBBDB /* IconG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconG.png; path = Resources/IconG.png; sourceTree = SOURCE_ROOT; };
 		28480F9219B13334001DBBDB /* IconF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = IconF.png; path = Resources/IconF.png; sourceTree = SOURCE_ROOT; };
+		28480F9419B13955001DBBDB /* privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = privacy.png; path = Resources/privacy.png; sourceTree = SOURCE_ROOT; };
+		28480F9519B13955001DBBDB /* signin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = signin.png; path = Resources/signin.png; sourceTree = SOURCE_ROOT; };
+		28480F9A19B15313001DBBDB /* PrivacySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacySettingViewController.h; sourceTree = SOURCE_ROOT; };
+		28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacySettingViewController.m; sourceTree = SOURCE_ROOT; };
+		28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivacySettingViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
 		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
@@ -176,6 +185,9 @@
 		0043C7A41580045B000DF02E /* Social Network Privacy Management */ = {
 			isa = PBXGroup;
 			children = (
+				28480F9A19B15313001DBBDB /* PrivacySettingViewController.h */,
+				28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */,
+				28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */,
 				28480F8B19AFD2FA001DBBDB /* AccountViewController.h */,
 				28480F8C19AFD2FA001DBBDB /* AccountViewController.m */,
 				28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */,
@@ -217,6 +229,8 @@
 		D98254AB15990DBC0060CA47 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28480F9419B13955001DBBDB /* privacy.png */,
+				28480F9519B13955001DBBDB /* signin.png */,
 				28480F9219B13334001DBBDB /* IconF.png */,
 				28480F9019B12A0D001DBBDB /* IconG.png */,
 				28480F8019ADBEE9001DBBDB /* Icon-60@2x.png */,
@@ -368,11 +382,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9EE74C4158A8E0500EC1D05 /* MasterViewController.xib in Resources */,
+				28480F9619B13955001DBBDB /* privacy.png in Resources */,
+				28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */,
 				28480F8319ADBEE9001DBBDB /* Icon@2x.png in Resources */,
 				D9EE74CA158A8E0500EC1D05 /* SignInViewController.xib in Resources */,
 				0C52D6F8158BAB1F001510E6 /* button_background.png in Resources */,
 				8E47E995171CB75C003FBA75 /* GooglePlus.bundle in Resources */,
 				E0681E5F171F46EB0098D356 /* Default-568h@2x.png in Resources */,
+				28480F9719B13955001DBBDB /* signin.png in Resources */,
 				28480F9119B12A0D001DBBDB /* IconG.png in Resources */,
 				D9A49D9F1720DD5E009C6DE2 /* Default@2x~iphone.png in Resources */,
 				D9A49DA01720DD5E009C6DE2 /* Default~iphone.png in Resources */,
@@ -393,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28480F9D19B15313001DBBDB /* PrivacySettingViewController.m in Sources */,
 				00F70E83158006DC0077799E /* main.m in Sources */,
 				D9EE74C2158A8E0500EC1D05 /* AppDelegate.m in Sources */,
 				D9EE74C3158A8E0500EC1D05 /* MasterViewController.m in Sources */,

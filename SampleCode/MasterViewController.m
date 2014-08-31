@@ -29,14 +29,14 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 //static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
 //    nil, nil, @"Sign in to list people", @"Sign in to edit app activities" };
 static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
-    nil, nil };
+    nil, @"Privacy Setting" };
 //static NSString * const kNibNames[kNumViewControllers] = {
 //    @"SignInViewController",
 //    @"ShareViewController",
 //    @"ListPeopleViewController",
 //    @"MomentsViewController" };
 static NSString * const kNibNames[kNumViewControllers] = {
-    @"SignInViewController"};
+    @"SignInViewController",@"PrivacySettingViewController"};
 
 @implementation MasterViewController
 
@@ -95,7 +95,13 @@ static NSString * const kNibNames[kNumViewControllers] = {
   cell.textLabel.text = (selectable ? kMenuOptions : kUnselectableMenuOptions)
       [indexPath.row];
   cell.accessibilityLabel = cell.textLabel.text;
-
+    
+    UIImage *theImage = [UIImage imageNamed:@"signin.png"];
+    if (indexPath.row == 1) {
+        theImage = [UIImage imageNamed:@"privacy.png"];
+    }
+    cell.imageView.image = theImage;
+    
   return cell;
 }
 
