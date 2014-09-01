@@ -1,28 +1,28 @@
 //
-//  AccountViewController.m
+//  FBViewController.m
 //  Social Network Privacy Management
 //
-//  Created by Nga Nguyen on 8/29/14.
+//  Created by Nga Nguyen on 9/1/14.
 //
 //
 
-#import "AccountViewController.h"
-#import "MasterViewController.h"
+#import "FBViewController.h"
+#import <GooglePlus/GooglePlus.h>
 
+static const int kFBNumViewControllers = 2;
+static NSString * const kFBMenuOptions[kFBNumViewControllers] = {
+    @"Sign in", @"Privacy Setting" };
 
-@interface AccountViewController ()
+static NSString * const kFBUnselectableMenuOptions[kFBNumViewControllers] = {
+    nil, @"Privacy Setting" };
+static NSString * const kFBNibNames[kFBNumViewControllers] = {
+    @"FBSignInViewController",@"FBPrivacySettingViewController"};
+
+@interface FBViewController ()
 
 @end
 
-@implementation AccountViewController
-
-@synthesize menuArray;
-
-static const int kNumViewControllers = 2;
-static NSString * const kNibNames[kNumViewControllers] = {
-    @"FBViewController", @"MasterViewController"};
-static NSString * const kMenuOptions[kNumViewControllers] = {
-    @"Facebook", @"Google +" };
+@implementation FBViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil {
@@ -32,7 +32,6 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,8 +41,6 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.menuArray = [NSArray arrayWithObjects:@"Facebook", @"Google +", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,38 +60,39 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.menuArray count];
+    return kFBNumViewControllers;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    NSInteger row = indexPath.row;
-    NSString *cellText = [self.menuArray objectAtIndex:row];
-    
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    static NSString *MyIdentifier = @"MyReuseIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    BOOL selectable = [self isSelectable:indexPath];
+    NSString * const kCellIdentifier = selectable ? @"Cell" : @"GreyCell";
+    UITableViewCell *cell =
+    [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
-        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell =
+        [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                               reuseIdentifier:kCellIdentifier];
+        if (selectable) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        } else {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.textLabel.textColor = [UIColor lightGrayColor];
+        }
     }
+    cell.textLabel.text = (selectable ? kFBMenuOptions : kFBUnselectableMenuOptions)
+    [indexPath.row];
+    cell.accessibilityLabel = cell.textLabel.text;
     
-    cell.textLabel.text = cellText;
-    
-//    NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
-//    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    UIImage *theImage = [UIImage imageNamed:@"IconF.png"];
-    if (row == 1) {
-        theImage = [UIImage imageNamed:@"IconG.png"];
+    UIImage *theImage = [UIImage imageNamed:@"signin.png"];
+    if (indexPath.row == 1) {
+        theImage = [UIImage imageNamed:@"privacy.png"];
     }
     cell.imageView.image = theImage;
     
     return cell;
+
 }
 
 
@@ -144,21 +142,26 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    //MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    //[self.navigationController pushViewController:masterViewController animated:YES];
-    
-    Class nibClass = NSClassFromString(kNibNames[indexPath.row]);
+    if (![self isSelectable:indexPath]) {
+        return;
+    }
+    Class nibClass = NSClassFromString(kFBNibNames[indexPath.row]);
     UIViewController *controller =
     [[nibClass alloc] initWithNibName:nil bundle:nil];
-    controller.navigationItem.title = kMenuOptions[indexPath.row];
+    controller.navigationItem.title = kFBMenuOptions[indexPath.row];
     
     [self.navigationController pushViewController:controller animated:YES];
-
 }
 
+
+#pragma mark - Helper methods
+
+- (BOOL)isSelectable:(NSIndexPath *)indexPath {
+    if (kFBUnselectableMenuOptions[indexPath.row]) {
+        // To use Google+ app activities, you need to sign in.
+        return [GPPSignIn sharedInstance].authentication != nil;
+    }
+    return YES;
+}
 
 @end

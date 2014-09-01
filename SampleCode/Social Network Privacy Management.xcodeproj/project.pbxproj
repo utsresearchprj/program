@@ -26,6 +26,8 @@
 		28480F9719B13955001DBBDB /* signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9519B13955001DBBDB /* signin.png */; };
 		28480F9D19B15313001DBBDB /* PrivacySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */; };
 		28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */; };
+		28480FA719B458B5001DBBDB /* FBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480FA519B458B5001DBBDB /* FBViewController.m */; };
+		28480FA819B458B5001DBBDB /* FBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480FA619B458B5001DBBDB /* FBViewController.xib */; };
 		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
@@ -77,6 +79,9 @@
 		28480F9A19B15313001DBBDB /* PrivacySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacySettingViewController.h; sourceTree = SOURCE_ROOT; };
 		28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacySettingViewController.m; sourceTree = SOURCE_ROOT; };
 		28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrivacySettingViewController.xib; sourceTree = SOURCE_ROOT; };
+		28480FA419B458B5001DBBDB /* FBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBViewController.h; sourceTree = SOURCE_ROOT; };
+		28480FA519B458B5001DBBDB /* FBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBViewController.m; sourceTree = SOURCE_ROOT; };
+		28480FA619B458B5001DBBDB /* FBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
 		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
@@ -206,6 +211,9 @@
 				D9EE74B5158A8E0500EC1D05 /* MasterViewController.h */,
 				D9EE74B6158A8E0500EC1D05 /* MasterViewController.m */,
 				D9EE74B7158A8E0500EC1D05 /* MasterViewController.xib */,
+				28480FA419B458B5001DBBDB /* FBViewController.h */,
+				28480FA519B458B5001DBBDB /* FBViewController.m */,
+				28480FA619B458B5001DBBDB /* FBViewController.xib */,
 				D9EE74BE158A8E0500EC1D05 /* SignInViewController.h */,
 				D9EE74BF158A8E0500EC1D05 /* SignInViewController.m */,
 				D9EE74C0158A8E0500EC1D05 /* SignInViewController.xib */,
@@ -389,6 +397,7 @@
 				0C52D6F8158BAB1F001510E6 /* button_background.png in Resources */,
 				8E47E995171CB75C003FBA75 /* GooglePlus.bundle in Resources */,
 				E0681E5F171F46EB0098D356 /* Default-568h@2x.png in Resources */,
+				28480FA819B458B5001DBBDB /* FBViewController.xib in Resources */,
 				28480F9719B13955001DBBDB /* signin.png in Resources */,
 				28480F9119B12A0D001DBBDB /* IconG.png in Resources */,
 				D9A49D9F1720DD5E009C6DE2 /* Default@2x~iphone.png in Resources */,
@@ -413,6 +422,7 @@
 				28480F9D19B15313001DBBDB /* PrivacySettingViewController.m in Sources */,
 				00F70E83158006DC0077799E /* main.m in Sources */,
 				D9EE74C2158A8E0500EC1D05 /* AppDelegate.m in Sources */,
+				28480FA719B458B5001DBBDB /* FBViewController.m in Sources */,
 				D9EE74C3158A8E0500EC1D05 /* MasterViewController.m in Sources */,
 				D9EE74C9158A8E0500EC1D05 /* SignInViewController.m in Sources */,
 				28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */,

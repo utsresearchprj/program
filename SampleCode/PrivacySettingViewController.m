@@ -21,7 +21,13 @@ static const int kNumRowsPerBasicInfo = 5;
 static const int kNumRowsPerEmployer = 4;
 static const int kNumRowsPerSchool = 3;
 static NSString * const kSections[kNumSections] = {
-    @"Basic Information", @"Working Information", @"Education Information" };
+    @"BASIC INFORMATION", @"WORKING INFORMATION", @"EDUCATION INFORMATION" };
+static NSString * const kRowsOfBasicInfo[kNumRowsPerBasicInfo] = {
+    @"DOB", @"Gender", @"Name", @"Relationship",@"Email" };
+static NSString * const kRowsPerEmployer[kNumRowsPerEmployer] = {
+    @"Employer", @"Start Date", @"End Date", @"Job Title" };
+static NSString * const kRowsPerSchool[kNumRowsPerSchool] = {
+    @"School", @"Start Date", @"End Date" };
 
 @implementation PrivacySettingViewController
 
@@ -42,16 +48,17 @@ static NSString * const kSections[kNumSections] = {
     self.arrayEducationInfo = [[NSMutableArray alloc]init];
     self.Me = [[GTLPlusPerson alloc]init];
     
-//    GTLServicePlus* plusService = [[GTLServicePlus alloc] init];
+//    GTLServicePlus* plusService = [[GTLServicePlus alloc]init];
+//    GTLServicePlus* plusService = [GPPSignIn sharedInstance].plusService;
 //    plusService.retryEnabled = YES;
-//    
+    
 //    [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
 //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    [plusService setAuthorizer:appDelegate];
-    //[plusService setAuthorizer:static_auth];
+//    [plusService setAuthorizer:static_auth];
     
 //    GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
-    
+//    
 //    [plusService executeQuery:query
 //            completionHandler:^(GTLServiceTicket *ticket,
 //                                GTLPlusPerson *person,
@@ -60,7 +67,6 @@ static NSString * const kSections[kNumSections] = {
 //                    GTMLoggerError(@"Error: %@", error);
 //                } else {
 //                    
-//                    [description setString:(person.displayName)];
 //                    self.Me = person;
 //                    [self.arrayBasicInfo addObject:(person.birthday)];
 //                    [self.arrayBasicInfo addObject:(person.gender)];
@@ -71,6 +77,7 @@ static NSString * const kSections[kNumSections] = {
 //                    [self.arrayWorkingInfo addObject:([person.organizations objectAtIndex:0])];
 //                }
 //            }];
+    
     
     GTLPlusPerson *person1 = [GPPSignIn sharedInstance].googlePlusUser;
     self.Me = person1;
@@ -97,7 +104,6 @@ static NSString * const kSections[kNumSections] = {
         else
             [self.arrayEducationInfo addObject:tempOrg];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -148,44 +154,70 @@ static NSString * const kSections[kNumSections] = {
     
     static NSString *MyIdentifier = @"MyReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1  reuseIdentifier:MyIdentifier];
         //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     NSString* cellText = nil;
+    NSString* cellLabel = nil;
     GTLPlusPersonOrganizationsItem* tempOrg = [[GTLPlusPersonOrganizationsItem alloc]init];
     
     switch (section) {
         case 0:
             cellText = [self.arrayBasicInfo objectAtIndex:row];
-            cell.textLabel.text = cellText;
+            cell.textLabel.text = kRowsOfBasicInfo[row];
+            cell.detailTextLabel.text = cellText;
             break;
         case 1:
             tempOrg = [self.arrayWorkingInfo objectAtIndex:(row/kNumRowsPerEmployer)];
             if(row % kNumRowsPerEmployer == 0)
+            {
+                cellLabel = kRowsPerEmployer[0];
                 cellText = tempOrg.name;
-            if(row % kNumRowsPerEmployer == 1)
+            }
+            else if(row % kNumRowsPerEmployer == 1)
+            {
+                cellLabel = kRowsPerEmployer[1];
                 cellText = tempOrg.startDate;
-            if(row % kNumRowsPerEmployer == 2)
+            }
+            else if(row % kNumRowsPerEmployer == 2)
+            {
+                cellLabel = kRowsPerEmployer[2];
                 cellText = tempOrg.endDate;
-            if(row % kNumRowsPerEmployer == 3)
+            }
+            else if(row % kNumRowsPerEmployer == 3)
+            {
+                cellLabel = kRowsPerEmployer[3];
                 cellText = tempOrg.title;
+            }
 
-            cell.textLabel.text = cellText;
+            cell.textLabel.text = cellLabel;
+            cell.detailTextLabel.text = cellText;
 
             break;
         case 2:
             tempOrg = [self.arrayEducationInfo objectAtIndex:(row/kNumRowsPerSchool)];
             if(row % kNumRowsPerSchool == 0)
+            {
+                cellLabel = kRowsPerSchool[0];
                 cellText = tempOrg.name;
-            if(row % kNumRowsPerSchool == 1)
+            }
+            else if(row % kNumRowsPerSchool == 1)
+            {
+                cellLabel = kRowsPerSchool[1];
                 cellText = tempOrg.startDate;
-            if(row % kNumRowsPerSchool == 2)
+            }
+            else if(row % kNumRowsPerSchool == 2)
+            {
+                cellLabel = kRowsPerSchool[2];
                 cellText = tempOrg.endDate;
+            }
             
-            cell.textLabel.text = cellText;
+            cell.textLabel.text = cellLabel;
+            cell.detailTextLabel.text = cellText;
             break;
     }
     
