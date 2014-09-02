@@ -28,6 +28,10 @@
 		28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */; };
 		28480FA719B458B5001DBBDB /* FBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480FA519B458B5001DBBDB /* FBViewController.m */; };
 		28480FA819B458B5001DBBDB /* FBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480FA619B458B5001DBBDB /* FBViewController.xib */; };
+		28480FAA19B5B1F5001DBBDB /* osa_awareness.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480FA919B5B1F5001DBBDB /* osa_awareness.png */; };
+		28480FAF19B5B91B001DBBDB /* GoogleAwareness.htm in Resources */ = {isa = PBXBuildFile; fileRef = 28480FAE19B5B91B001DBBDB /* GoogleAwareness.htm */; };
+		28480FB319B5E4A7001DBBDB /* AwarenessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480FB119B5E4A7001DBBDB /* AwarenessViewController.m */; };
+		28480FB419B5E4A7001DBBDB /* AwarenessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480FB219B5E4A7001DBBDB /* AwarenessViewController.xib */; };
 		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
@@ -82,6 +86,11 @@
 		28480FA419B458B5001DBBDB /* FBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBViewController.h; sourceTree = SOURCE_ROOT; };
 		28480FA519B458B5001DBBDB /* FBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBViewController.m; sourceTree = SOURCE_ROOT; };
 		28480FA619B458B5001DBBDB /* FBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBViewController.xib; sourceTree = SOURCE_ROOT; };
+		28480FA919B5B1F5001DBBDB /* osa_awareness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = osa_awareness.png; path = Resources/osa_awareness.png; sourceTree = SOURCE_ROOT; };
+		28480FAE19B5B91B001DBBDB /* GoogleAwareness.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GoogleAwareness.htm; path = Resources/GoogleAwareness.htm; sourceTree = SOURCE_ROOT; };
+		28480FB019B5E4A7001DBBDB /* AwarenessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwarenessViewController.h; sourceTree = SOURCE_ROOT; };
+		28480FB119B5E4A7001DBBDB /* AwarenessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwarenessViewController.m; sourceTree = SOURCE_ROOT; };
+		28480FB219B5E4A7001DBBDB /* AwarenessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AwarenessViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
 		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
@@ -190,12 +199,12 @@
 		0043C7A41580045B000DF02E /* Social Network Privacy Management */ = {
 			isa = PBXGroup;
 			children = (
-				28480F9A19B15313001DBBDB /* PrivacySettingViewController.h */,
-				28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */,
-				28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */,
 				28480F8B19AFD2FA001DBBDB /* AccountViewController.h */,
 				28480F8C19AFD2FA001DBBDB /* AccountViewController.m */,
 				28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */,
+				28480FB019B5E4A7001DBBDB /* AwarenessViewController.h */,
+				28480FB119B5E4A7001DBBDB /* AwarenessViewController.m */,
+				28480FB219B5E4A7001DBBDB /* AwarenessViewController.xib */,
 				D9EE74B3158A8E0500EC1D05 /* AppDelegate.h */,
 				D9EE74B4158A8E0500EC1D05 /* AppDelegate.m */,
 				D92939E217A04DA00024AA91 /* AuthInspectorViewController.h */,
@@ -208,12 +217,15 @@
 				2A5857A0178DCDD000C84F01 /* DataPickerViewController.xib */,
 				2ABEB955178B3E6C00371CF2 /* EditableCell.h */,
 				2ABEB956178B3E6C00371CF2 /* EditableCell.m */,
-				D9EE74B5158A8E0500EC1D05 /* MasterViewController.h */,
-				D9EE74B6158A8E0500EC1D05 /* MasterViewController.m */,
-				D9EE74B7158A8E0500EC1D05 /* MasterViewController.xib */,
 				28480FA419B458B5001DBBDB /* FBViewController.h */,
 				28480FA519B458B5001DBBDB /* FBViewController.m */,
 				28480FA619B458B5001DBBDB /* FBViewController.xib */,
+				D9EE74B5158A8E0500EC1D05 /* MasterViewController.h */,
+				D9EE74B6158A8E0500EC1D05 /* MasterViewController.m */,
+				D9EE74B7158A8E0500EC1D05 /* MasterViewController.xib */,
+				28480F9A19B15313001DBBDB /* PrivacySettingViewController.h */,
+				28480F9B19B15313001DBBDB /* PrivacySettingViewController.m */,
+				28480F9C19B15313001DBBDB /* PrivacySettingViewController.xib */,
 				D9EE74BE158A8E0500EC1D05 /* SignInViewController.h */,
 				D9EE74BF158A8E0500EC1D05 /* SignInViewController.m */,
 				D9EE74C0158A8E0500EC1D05 /* SignInViewController.xib */,
@@ -237,6 +249,8 @@
 		D98254AB15990DBC0060CA47 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28480FAE19B5B91B001DBBDB /* GoogleAwareness.htm */,
+				28480FA919B5B1F5001DBBDB /* osa_awareness.png */,
 				28480F9419B13955001DBBDB /* privacy.png */,
 				28480F9519B13955001DBBDB /* signin.png */,
 				28480F9219B13334001DBBDB /* IconF.png */,
@@ -395,13 +409,16 @@
 				28480F8319ADBEE9001DBBDB /* Icon@2x.png in Resources */,
 				D9EE74CA158A8E0500EC1D05 /* SignInViewController.xib in Resources */,
 				0C52D6F8158BAB1F001510E6 /* button_background.png in Resources */,
+				28480FAF19B5B91B001DBBDB /* GoogleAwareness.htm in Resources */,
 				8E47E995171CB75C003FBA75 /* GooglePlus.bundle in Resources */,
 				E0681E5F171F46EB0098D356 /* Default-568h@2x.png in Resources */,
 				28480FA819B458B5001DBBDB /* FBViewController.xib in Resources */,
 				28480F9719B13955001DBBDB /* signin.png in Resources */,
 				28480F9119B12A0D001DBBDB /* IconG.png in Resources */,
+				28480FB419B5E4A7001DBBDB /* AwarenessViewController.xib in Resources */,
 				D9A49D9F1720DD5E009C6DE2 /* Default@2x~iphone.png in Resources */,
 				D9A49DA01720DD5E009C6DE2 /* Default~iphone.png in Resources */,
+				28480FAA19B5B1F5001DBBDB /* osa_awareness.png in Resources */,
 				28480F8F19AFD2FA001DBBDB /* AccountViewController.xib in Resources */,
 				2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */,
 				28480F9319B13334001DBBDB /* IconF.png in Resources */,
@@ -423,6 +440,7 @@
 				00F70E83158006DC0077799E /* main.m in Sources */,
 				D9EE74C2158A8E0500EC1D05 /* AppDelegate.m in Sources */,
 				28480FA719B458B5001DBBDB /* FBViewController.m in Sources */,
+				28480FB319B5E4A7001DBBDB /* AwarenessViewController.m in Sources */,
 				D9EE74C3158A8E0500EC1D05 /* MasterViewController.m in Sources */,
 				D9EE74C9158A8E0500EC1D05 /* SignInViewController.m in Sources */,
 				28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */,
@@ -513,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Social Network Privacy Management-Prefix.pch";
 				INFOPLIST_FILE = "Social Network Privacy Management-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -535,6 +554,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Social Network Privacy Management-Prefix.pch";
 				INFOPLIST_FILE = "Social Network Privacy Management-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

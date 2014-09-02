@@ -21,22 +21,22 @@
 #import <GooglePlus/GooglePlus.h>
 
 //static const int kNumViewControllers = 4;
-static const int kNumViewControllers = 2;
+static const int kNumViewControllers = 3;
 //static NSString * const kMenuOptions[kNumViewControllers] = {
 //    @"Sign in", @"Share", @"People", @"App Activities" };
 static NSString * const kMenuOptions[kNumViewControllers] = {
-    @"Sign in", @"Privacy Setting" };
+    @"Sign in", @"Profile", @"Awareness" };
 //static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
 //    nil, nil, @"Sign in to list people", @"Sign in to edit app activities" };
 static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
-    nil, @"Privacy Setting" };
+    nil, @"Profile",nil };
 //static NSString * const kNibNames[kNumViewControllers] = {
 //    @"SignInViewController",
 //    @"ShareViewController",
 //    @"ListPeopleViewController",
 //    @"MomentsViewController" };
 static NSString * const kNibNames[kNumViewControllers] = {
-    @"SignInViewController",@"PrivacySettingViewController"};
+    @"SignInViewController",@"PrivacySettingViewController",@"AwarenessViewController"};
 
 @implementation MasterViewController
 
@@ -99,6 +99,9 @@ static NSString * const kNibNames[kNumViewControllers] = {
     UIImage *theImage = [UIImage imageNamed:@"signin.png"];
     if (indexPath.row == 1) {
         theImage = [UIImage imageNamed:@"privacy.png"];
+    }
+    else if (indexPath.row == 2) {
+        theImage = [UIImage imageNamed:@"osa_awareness.png"];
     }
     cell.imageView.image = theImage;
     
