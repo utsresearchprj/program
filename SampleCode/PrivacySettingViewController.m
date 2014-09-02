@@ -28,6 +28,8 @@ static NSString * const kRowsPerEmployer[kNumRowsPerEmployer] = {
     @"Employer", @"Start Date", @"End Date", @"Job Title" };
 static NSString * const kRowsPerSchool[kNumRowsPerSchool] = {
     @"School", @"Start Date", @"End Date" };
+static NSString * const kNibName = @"EditProfileViewController";
+static NSString * const kTitleForEditScr = @"Edit Profile";
 
 @implementation PrivacySettingViewController
 
@@ -280,7 +282,16 @@ static NSString * const kRowsPerSchool[kNumRowsPerSchool] = {
 }
 */
 
-#pragma mark - Helper
+#pragma mark - Button Delegate
 
 
+- (IBAction)editBt:(id)sender {
+    
+    Class nibClass = NSClassFromString(kNibName);
+    UIViewController *controller =
+    [[nibClass alloc] initWithNibName:nil bundle:nil];
+    controller.navigationItem.title = kTitleForEditScr;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end
