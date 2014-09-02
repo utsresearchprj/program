@@ -13,6 +13,8 @@
 @end
 
 
+static NSString * const kEditProfileURL = @"https://plus.google.com/app/basic/profile/edit";
+
 @implementation EditProfileViewController
 
 @synthesize myWebView;
@@ -40,7 +42,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://plus.google.com/app/basic/profile/edit"]]];
+    
+    //trying to support landscape view
+    self.view.autoresizesSubviews = YES;
+    self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
+    
+    CGRect webFrame = [[UIScreen mainScreen] applicationFrame];
+    webFrame.origin.y -= 20.0;
+    
+    self.myWebView.scalesPageToFit = YES;
+    self.myWebView.frame = webFrame;
+    self.myWebView.autoresizesSubviews = YES;
+    self.myWebView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    
+    //load URL
+    [self.myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kEditProfileURL]]];
+    
+    
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -65,6 +84,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) orientation
+{
+    return YES;
+    
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    if(fromInterfaceOrientation == UIInterfaceOrientationPortrait){
+        [self.myWebView stringByEvaluatingJavaScriptFromString:@"rotate(0)"];
+        
+    }
+    else{
+        [self.myWebView stringByEvaluatingJavaScriptFromString:@"rotate(1)"];
+    }
 }
 
 @end

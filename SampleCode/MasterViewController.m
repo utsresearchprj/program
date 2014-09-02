@@ -17,24 +17,14 @@
 //
 
 #import "MasterViewController.h"
-
 #import <GooglePlus/GooglePlus.h>
 
-//static const int kNumViewControllers = 4;
+
 static const int kNumViewControllers = 3;
-//static NSString * const kMenuOptions[kNumViewControllers] = {
-//    @"Sign in", @"Share", @"People", @"App Activities" };
 static NSString * const kMenuOptions[kNumViewControllers] = {
     @"Sign in", @"Profile", @"Awareness" };
-//static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
-//    nil, nil, @"Sign in to list people", @"Sign in to edit app activities" };
 static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
     nil, @"Profile",nil };
-//static NSString * const kNibNames[kNumViewControllers] = {
-//    @"SignInViewController",
-//    @"ShareViewController",
-//    @"ListPeopleViewController",
-//    @"MomentsViewController" };
 static NSString * const kNibNames[kNumViewControllers] = {
     @"SignInViewController",@"PrivacySettingViewController",@"AwarenessViewController"};
 
@@ -110,13 +100,19 @@ static NSString * const kNibNames[kNumViewControllers] = {
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (![self isSelectable:indexPath]) {
-    return;
-  }
+  
+    if (![self isSelectable:indexPath]) {
+        return;
+    }
   Class nibClass = NSClassFromString(kNibNames[indexPath.row]);
   UIViewController *controller =
       [[nibClass alloc] initWithNibName:nil bundle:nil];
-  controller.navigationItem.title = kMenuOptions[indexPath.row];
+    controller.navigationItem.title = kMenuOptions[indexPath.row];
+//    if(indexPath.row == 1)
+//    {
+//        
+//        [controller.navigationItem.rightBarButtonItem init].title = @"Try";
+//    }
 
   [self.navigationController pushViewController:controller animated:YES];
 }

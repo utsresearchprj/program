@@ -106,6 +106,10 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
         else
             [self.arrayEducationInfo addObject:tempOrg];
     }
+    
+    UIBarButtonItem *editProfile = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editProfileBt)];
+    self.navigationItem.rightBarButtonItem = editProfile;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -285,7 +289,7 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
 #pragma mark - Button Delegate
 
 
-- (IBAction)editBt:(id)sender {
+- (IBAction)editProfileBt {
     
     Class nibClass = NSClassFromString(kNibName);
     UIViewController *controller =

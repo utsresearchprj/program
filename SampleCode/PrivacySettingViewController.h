@@ -15,6 +15,5 @@
 @property(strong,nonatomic) NSMutableArray* arrayBasicInfo;
 @property(strong,nonatomic) NSMutableArray* arrayWorkingInfo;
 @property(strong,nonatomic) NSMutableArray* arrayEducationInfo;
-- (IBAction)editBt:(id)sender;
 
 @end
