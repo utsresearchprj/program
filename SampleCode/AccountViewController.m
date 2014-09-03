@@ -24,6 +24,9 @@ static NSString * const kNibNames[kNumViewControllers] = {
 static NSString * const kMenuOptions[kNumViewControllers] = {
     @"Facebook", @"Google +" };
 
+static NSString * const kStrAbout = @"About";
+static NSString * const kAboutNibName = @"AboutViewController";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -54,16 +57,30 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 
 #pragma mark - Table view data source
 
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString* title = nil;
+    if (section == 0)
+        title =  @"";
+    else if (section == 1)
+        title = @" ";
+    
+    return title;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.menuArray count];
+    if(section == 0)
+        return [self.menuArray count];
+    else
+        return 1;
 }
 
 
@@ -71,28 +88,30 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 {
     
     NSInteger row = indexPath.row;
-    NSString *cellText = [self.menuArray objectAtIndex:row];
+    NSInteger section = indexPath.section;
     
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    //init cell
     static NSString *MyIdentifier = @"MyReuseIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
-        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+
     
-    cell.textLabel.text = cellText;
+    if (section == 0) {
     
-//    NSDictionary *item = (NSDictionary *)[self.content objectAtIndex:indexPath.row];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:[item objectForKey:@"imageKey"] ofType:@"png"];
-//    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    UIImage *theImage = [UIImage imageNamed:@"IconF.png"];
-    if (row == 1) {
-        theImage = [UIImage imageNamed:@"IconG.png"];
+        cell.textLabel.text = [self.menuArray objectAtIndex:row];
+        
+        UIImage *theImage = [UIImage imageNamed:@"IconF.png"];
+        if (row == 1) {
+            theImage = [UIImage imageNamed:@"IconG.png"];
+        }
+        cell.imageView.image = theImage;
     }
-    cell.imageView.image = theImage;
+    else if(section == 1)
+        cell.textLabel.text = kStrAbout;
+    
     
     return cell;
 }
@@ -142,19 +161,28 @@ static NSString * const kMenuOptions[kNumViewControllers] = {
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    //MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
     //[self.navigationController pushViewController:masterViewController animated:YES];
     
-    Class nibClass = NSClassFromString(kNibNames[indexPath.row]);
+    NSInteger section = indexPath.section;
+    Class nibClass = nil;
+    if (section == 0)
+        nibClass = NSClassFromString(kNibNames[indexPath.row]);
+    
+    else if (section == 1)
+        nibClass = NSClassFromString(kAboutNibName);
+    
     UIViewController *controller =
     [[nibClass alloc] initWithNibName:nil bundle:nil];
-    controller.navigationItem.title = kMenuOptions[indexPath.row];
+    if (section == 0)
+        controller.navigationItem.title = kMenuOptions[indexPath.row];
+    
+    else if (section == 1)
+        controller.navigationItem.title = kStrAbout;
+    
     
     [self.navigationController pushViewController:controller animated:YES];
 

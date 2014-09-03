@@ -38,6 +38,8 @@
 		28480FBF19B72C03001DBBDB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480FBB19B72C03001DBBDB /* Icon-72@2x.png */; };
 		28480FC019B72C03001DBBDB /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480FBC19B72C03001DBBDB /* Icon-76.png */; };
 		28480FC119B72C03001DBBDB /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28480FBD19B72C03001DBBDB /* Icon-76@2x.png */; };
+		28480FC519B72F27001DBBDB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28480FC319B72F27001DBBDB /* AboutViewController.m */; };
+		28480FC619B72F27001DBBDB /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28480FC419B72F27001DBBDB /* AboutViewController.xib */; };
 		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
@@ -104,6 +106,9 @@
 		28480FBB19B72C03001DBBDB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Resources/Icon-72@2x.png"; sourceTree = SOURCE_ROOT; };
 		28480FBC19B72C03001DBBDB /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Resources/Icon-76.png"; sourceTree = SOURCE_ROOT; };
 		28480FBD19B72C03001DBBDB /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@2x.png"; path = "Resources/Icon-76@2x.png"; sourceTree = SOURCE_ROOT; };
+		28480FC219B72F27001DBBDB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = SOURCE_ROOT; };
+		28480FC319B72F27001DBBDB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = SOURCE_ROOT; };
+		28480FC419B72F27001DBBDB /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
 		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
@@ -212,14 +217,17 @@
 		0043C7A41580045B000DF02E /* Social Network Privacy Management */ = {
 			isa = PBXGroup;
 			children = (
+				D9EE74B3158A8E0500EC1D05 /* AppDelegate.h */,
+				D9EE74B4158A8E0500EC1D05 /* AppDelegate.m */,
 				28480F8B19AFD2FA001DBBDB /* AccountViewController.h */,
 				28480F8C19AFD2FA001DBBDB /* AccountViewController.m */,
 				28480F8D19AFD2FA001DBBDB /* AccountViewController.xib */,
 				28480FB019B5E4A7001DBBDB /* AwarenessViewController.h */,
 				28480FB119B5E4A7001DBBDB /* AwarenessViewController.m */,
 				28480FB219B5E4A7001DBBDB /* AwarenessViewController.xib */,
-				D9EE74B3158A8E0500EC1D05 /* AppDelegate.h */,
-				D9EE74B4158A8E0500EC1D05 /* AppDelegate.m */,
+				28480FC219B72F27001DBBDB /* AboutViewController.h */,
+				28480FC319B72F27001DBBDB /* AboutViewController.m */,
+				28480FC419B72F27001DBBDB /* AboutViewController.xib */,
 				D92939E217A04DA00024AA91 /* AuthInspectorViewController.h */,
 				D92939E317A04DA00024AA91 /* AuthInspectorViewController.m */,
 				2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */,
@@ -428,6 +436,7 @@
 				28480F9619B13955001DBBDB /* privacy.png in Resources */,
 				28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */,
 				28480F8319ADBEE9001DBBDB /* Icon@2x.png in Resources */,
+				28480FC619B72F27001DBBDB /* AboutViewController.xib in Resources */,
 				D9EE74CA158A8E0500EC1D05 /* SignInViewController.xib in Resources */,
 				0C52D6F8158BAB1F001510E6 /* button_background.png in Resources */,
 				28480FAF19B5B91B001DBBDB /* GoogleAwareness.htm in Resources */,
@@ -471,6 +480,7 @@
 				28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */,
 				28480FB819B5FDC1001DBBDB /* EditProfileViewController.m in Sources */,
 				2ABEB957178B3E6C00371CF2 /* EditableCell.m in Sources */,
+				28480FC519B72F27001DBBDB /* AboutViewController.m in Sources */,
 				2A5857A2178DCDD000C84F01 /* DataPickerViewController.m in Sources */,
 				2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */,
 				D92939E417A04DA00024AA91 /* AuthInspectorViewController.m in Sources */,
