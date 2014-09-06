@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1280</int>
-		<string key="IBDocument.SystemVersion">13A603</string>
-		<string key="IBDocument.InterfaceBuilderVersion">4514</string>
-		<string key="IBDocument.AppKitVersion">1265</string>
-		<string key="IBDocument.HIToolboxVersion">695.00</string>
+		<int key="IBDocument.SystemTarget">1536</int>
+		<string key="IBDocument.SystemVersion">13C64</string>
+		<string key="IBDocument.InterfaceBuilderVersion">5056</string>
+		<string key="IBDocument.AppKitVersion">1265.19</string>
+		<string key="IBDocument.HIToolboxVersion">697.40</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">3747</string>
+			<string key="NS.object.0">3733</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -48,7 +48,7 @@
 								<object class="NSPSMatrix" key="NSFrameMatrix"/>
 								<string key="NSFrame">{{21, 63}, {280, 21}}</string>
 								<reference key="NSSuperview" ref="80041986"/>
-								<reference key="NSNextKeyView" ref="569390612"/>
+								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -187,28 +187,6 @@
 								<reference key="IBUIFontDescription" ref="1006637607"/>
 								<reference key="IBUIFont" ref="885541680"/>
 							</object>
-							<object class="IBUIButton" id="569390612">
-								<reference key="NSNextResponder" ref="80041986"/>
-								<int key="NSvFlags">1316</int>
-								<object class="NSPSMatrix" key="NSFrameMatrix"/>
-								<string key="NSFrame">{{167, 64}, {18, 19}}</string>
-								<reference key="NSSuperview" ref="80041986"/>
-								<reference key="NSNextKeyView" ref="990457758"/>
-								<bool key="IBUIOpaque">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<int key="IBUIContentHorizontalAlignment">0</int>
-								<int key="IBUIContentVerticalAlignment">0</int>
-								<int key="IBUIButtonType">4</int>
-								<bool key="IBUIShowsTouchWhenHighlighted">YES</bool>
-								<object class="NSColor" key="IBUINormalTitleColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
-								</object>
-								<reference key="IBUIHighlightedTitleColor" ref="436481616"/>
-								<reference key="IBUINormalTitleShadowColor" ref="393043458"/>
-								<reference key="IBUIFontDescription" ref="1006637607"/>
-								<reference key="IBUIFont" ref="885541680"/>
-							</object>
 							<object class="IBUIButton" id="990457758">
 								<reference key="NSNextResponder" ref="80041986"/>
 								<int key="NSvFlags">1316</int>
@@ -281,14 +259,6 @@
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<bool key="usesAutoincrementingIDs">NO</bool>
 			<array class="NSMutableArray" key="connectionRecords">
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">credentialsButton</string>
-						<reference key="source" ref="101937726"/>
-						<reference key="destination" ref="569390612"/>
-					</object>
-					<string key="id">83</string>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">disconnectButton</string>
@@ -371,15 +341,6 @@
 					</object>
 					<string key="id">66</string>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">showAuthInspector:</string>
-						<reference key="source" ref="569390612"/>
-						<reference key="destination" ref="101937726"/>
-						<int key="IBEventType">7</int>
-					</object>
-					<string key="id">82</string>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -418,7 +379,6 @@
 							<reference ref="354659280"/>
 							<reference ref="859710783"/>
 							<reference ref="137819190"/>
-							<reference ref="569390612"/>
 							<reference ref="990457758"/>
 						</array>
 						<reference key="parent" ref="931068718"/>
@@ -451,11 +411,6 @@
 					<object class="IBObjectRecord">
 						<string key="id">65</string>
 						<reference key="object" ref="137819190"/>
-						<reference key="parent" ref="80041986"/>
-					</object>
-					<object class="IBObjectRecord">
-						<string key="id">80</string>
-						<reference key="object" ref="569390612"/>
 						<reference key="parent" ref="80041986"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -497,9 +452,6 @@
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="72.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="72.showNotes"/>
-				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<reference key="80.IBUserGuides" ref="0"/>
-				<boolean value="NO" key="80.showNotes"/>
 				<string key="kfk-VS-c5g.CustomClassName">GPPSignInButton</string>
 				<string key="kfk-VS-c5g.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<reference key="kfk-VS-c5g.IBUserGuides" ref="0"/>
@@ -516,7 +468,7 @@
 		<bool key="IBDocument.previouslyAttemptedUpgradeToXcode5">YES</bool>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.iPhoneOS</string>
-			<real value="1280" key="NS.object.0"/>
+			<real value="1536" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaTouchPlugin.InterfaceBuilder3</string>
@@ -528,6 +480,6 @@
 			<string key="NS.key.0">PlaceholderAvatar.png</string>
 			<string key="NS.object.0">{50, 50}</string>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">3747</string>
+		<string key="IBCocoaTouchPluginVersion">3733</string>
 	</data>
 </archive>

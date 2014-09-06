@@ -22,11 +22,11 @@
 
 static const int kNumViewControllers = 3;
 static NSString * const kMenuOptions[kNumViewControllers] = {
-    @"Sign in", @"Profile", @"Awareness" };
+    @"Awareness",@"Sign in", @"Profile" };
 static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
-    nil, @"Profile",nil };
+    nil, nil, @"Profile"};
 static NSString * const kNibNames[kNumViewControllers] = {
-    @"SignInViewController",@"PrivacySettingViewController",@"AwarenessViewController"};
+    @"AwarenessViewController",@"SignInViewController",@"PrivacySettingViewController"};
 
 @implementation MasterViewController
 
@@ -86,12 +86,12 @@ static NSString * const kNibNames[kNumViewControllers] = {
       [indexPath.row];
   cell.accessibilityLabel = cell.textLabel.text;
     
-    UIImage *theImage = [UIImage imageNamed:@"signin.png"];
+    UIImage *theImage = [UIImage imageNamed:@"osa_awareness.png"];
     if (indexPath.row == 1) {
-        theImage = [UIImage imageNamed:@"privacy.png"];
+        theImage = [UIImage imageNamed:@"signin.png"];
     }
     else if (indexPath.row == 2) {
-        theImage = [UIImage imageNamed:@"osa_awareness.png"];
+        theImage = [UIImage imageNamed:@"privacy.png"];
     }
     cell.imageView.image = theImage;
     

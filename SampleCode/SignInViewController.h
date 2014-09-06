@@ -39,15 +39,14 @@
 // A button to disconnect user from this application.
 @property(weak, nonatomic) IBOutlet UIButton *disconnectButton;
 // A button to inspect the authorization object.
-@property(weak, nonatomic) IBOutlet UIButton *credentialsButton;
-// A dynamically-created slider for controlling the sign-in button width.
-@property(weak, nonatomic) UISlider *signInButtonWidthSlider;
+//@property(weak, nonatomic) IBOutlet UIButton *credentialsButton;
+
 
 // Called when the user presses the "Sign out" button.
 - (IBAction)signOut:(id)sender;
 // Called when the user presses the "Disconnect" button.
 - (IBAction)disconnect:(id)sender;
-// Called when the user presses the "Credentials" button.
-- (IBAction)showAuthInspector:(id)sender;
+//// Called when the user presses the "Credentials" button.
+//- (IBAction)showAuthInspector:(id)sender;
 
 @end

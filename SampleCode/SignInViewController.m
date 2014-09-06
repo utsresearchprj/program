@@ -164,7 +164,7 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-  self.credentialsButton.accessibilityIdentifier = kCredentialsButtonAccessibilityIdentifier;
+//  self.credentialsButton.accessibilityIdentifier = kCredentialsButtonAccessibilityIdentifier;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -227,19 +227,19 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
     GPPSignInButtonStyle newStyle;
     if ([style isEqualToString:@"Standard"]) {
       newStyle = kGPPSignInButtonStyleStandard;
-      self.signInButtonWidthSlider.enabled = YES;
+//      self.signInButtonWidthSlider.enabled = YES;
     } else if ([style isEqualToString:@"Wide"]) {
       newStyle = kGPPSignInButtonStyleWide;
-      self.signInButtonWidthSlider.enabled = YES;
+//      self.signInButtonWidthSlider.enabled = YES;
     } else {
       newStyle = kGPPSignInButtonStyleIconOnly;
-      self.signInButtonWidthSlider.enabled = NO;
+//      self.signInButtonWidthSlider.enabled = NO;
     }
     if (self.signInButton.style != newStyle) {
       self.signInButton.style = newStyle;
-      self.signInButtonWidthSlider.minimumValue = [self minimumButtonWidth];
+//      self.signInButtonWidthSlider.minimumValue = [self minimumButtonWidth];
     }
-    self.signInButtonWidthSlider.value = _signInButton.frame.size.width;
+//    self.signInButtonWidthSlider.value = _signInButton.frame.size.width;
   }
 
   // There may be multiple app activity types supported
@@ -327,7 +327,7 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
   self.signInButton.enabled = !authenticated;
   self.signOutButton.enabled = authenticated;
   self.disconnectButton.enabled = authenticated;
-  self.credentialsButton.hidden = !authenticated;
+//  self.credentialsButton.hidden = !authenticated;
 
   if (authenticated) {
     self.signInButton.alpha = 0.5;
@@ -368,11 +368,11 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
   [[GPPSignIn sharedInstance] disconnect];
 }
 
-- (IBAction)showAuthInspector:(id)sender {
-  AuthInspectorViewController *authInspector =
-  [[AuthInspectorViewController alloc] init];
-  [[self navigationController] pushViewController:authInspector animated:YES];
-}
+//- (IBAction)showAuthInspector:(id)sender {
+//  AuthInspectorViewController *authInspector =
+//  [[AuthInspectorViewController alloc] init];
+//  [[self navigationController] pushViewController:authInspector animated:YES];
+//}
 
 - (void)toggleUserID:(UISwitch *)sender {
   if ([[GPPSignIn sharedInstance] authentication]) {
@@ -419,24 +419,26 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
 #pragma mark - UITableView Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return [_sectionCellLabels count];
+//  return [_sectionCellLabels count];
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-  return [_sectionCellLabels[section] count];
+//  return [_sectionCellLabels[section] count];
+    return 0;
 }
 
-- (NSString *)tableView:(UITableView *)tableView
-    titleForHeaderInSection:(NSInteger)section {
-  if (section == 0) {
-    return @"Sign-in Button Configuration";
-  } else if (section == 1) {
-    return @"Other Configurations";
-  } else {
-    return nil;
-  }
-}
+//- (NSString *)tableView:(UITableView *)tableView
+//    titleForHeaderInSection:(NSInteger)section {
+//  if (section == 0) {
+//    return @"Sign-in Button Configuration";
+//  } else if (section == 1) {
+//    return @"Other Configurations";
+//  } else {
+//    return nil;
+//  }
+//}
 
 - (BOOL)tableView:(UITableView *)tableView
     shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -452,21 +454,21 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  static NSString * const kDrilldownCell = @"DrilldownCell";
-  static NSString * const kSwitchCell = @"SwitchCell";
-  static NSString * const kSliderCell = @"SliderCell";
-
-  NSString *label = _sectionCellLabels[indexPath.section][indexPath.row];
+//  static NSString * const kDrilldownCell = @"DrilldownCell";
+//  static NSString * const kSwitchCell = @"SwitchCell";
+//  static NSString * const kSliderCell = @"SliderCell";
+//
+//  NSString *label = _sectionCellLabels[indexPath.section][indexPath.row];
   UITableViewCell *cell;
   NSString *identifier;
 
-  if ([_drillDownCells containsObject:label]) {
-    identifier = kDrilldownCell;
-  } else if ([_switchCells containsObject:label]) {
-    identifier = kSwitchCell;
-  } else if ([_sliderCells containsObject:label]) {
-    identifier = kSliderCell;
-  }
+//  if ([_drillDownCells containsObject:label]) {
+//    identifier = kDrilldownCell;
+//  } else if ([_switchCells containsObject:label]) {
+//    identifier = kSwitchCell;
+//  } else if ([_sliderCells containsObject:label]) {
+//    identifier = kSliderCell;
+//  }
 
   cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
@@ -475,87 +477,90 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
                                   reuseIdentifier:identifier];
   }
   // Assign accessibility labels to each cell row.
-  cell.accessibilityLabel = label;
+//  cell.accessibilityLabel = label;
+//
+//  if (identifier == kDrilldownCell) {
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    DataPickerState *dataState = _drilldownCellState[label];
+//    if (dataState.multipleSelectEnabled) {
+//      cell.detailTextLabel.text = @"";
+//    } else {
+//      cell.detailTextLabel.text = [dataState.selectedCells anyObject];
+//    }
+//    cell.accessibilityValue = cell.detailTextLabel.text;
+//  }
+//  else if (identifier == kSwitchCell) {
+//    UISwitch *toggle = [[UISwitch alloc] initWithFrame:CGRectZero];
+//
+//    if ([label isEqualToString:kGetUserIDCellLabel]) {
+//      [toggle addTarget:self
+//                 action:@selector(toggleUserID:)
+//          forControlEvents:UIControlEventValueChanged];
+//      toggle.on = [GPPSignIn sharedInstance].shouldFetchGoogleUserID;
+//    } else if ([label isEqualToString:kSingleSignOnCellLabel]) {
+//      [toggle addTarget:self
+//                 action:@selector(toggleSingleSignOn:)
+//          forControlEvents:UIControlEventValueChanged];
+//      toggle.on = [GPPSignIn sharedInstance].attemptSSO;
+//    }
+//    toggle.accessibilityLabel = [NSString stringWithFormat:@"%@ Switch", cell.accessibilityLabel];
+//    cell.accessoryView = toggle;
+//  }
+//  else if (identifier == kSliderCell) {
+//    UISlider *slider =
+//        [[UISlider alloc] initWithFrame:CGRectMake(0, 0, 150, 0)];
+//    slider.minimumValue = [self minimumButtonWidth];
+//    slider.maximumValue = 268.0;
+//    slider.value = self.signInButton.frame.size.width;
+//    slider.enabled = self.signInButton.style != kGPPSignInButtonStyleIconOnly;
+//
+//    [slider addTarget:self
+//               action:@selector(changeSignInButtonWidth:)
+//        forControlEvents:UIControlEventValueChanged];
+//    cell.accessoryView = slider;
+//    slider.accessibilityIdentifier = [NSString stringWithFormat:@"%@ Slider", label];
+//    self.signInButtonWidthSlider = slider;
+//  }
 
-  if (identifier == kDrilldownCell) {
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    DataPickerState *dataState = _drilldownCellState[label];
-    if (dataState.multipleSelectEnabled) {
-      cell.detailTextLabel.text = @"";
-    } else {
-      cell.detailTextLabel.text = [dataState.selectedCells anyObject];
-    }
-    cell.accessibilityValue = cell.detailTextLabel.text;
-  } else if (identifier == kSwitchCell) {
-    UISwitch *toggle = [[UISwitch alloc] initWithFrame:CGRectZero];
-
-    if ([label isEqualToString:kGetUserIDCellLabel]) {
-      [toggle addTarget:self
-                 action:@selector(toggleUserID:)
-          forControlEvents:UIControlEventValueChanged];
-      toggle.on = [GPPSignIn sharedInstance].shouldFetchGoogleUserID;
-    } else if ([label isEqualToString:kSingleSignOnCellLabel]) {
-      [toggle addTarget:self
-                 action:@selector(toggleSingleSignOn:)
-          forControlEvents:UIControlEventValueChanged];
-      toggle.on = [GPPSignIn sharedInstance].attemptSSO;
-    }
-    toggle.accessibilityLabel = [NSString stringWithFormat:@"%@ Switch", cell.accessibilityLabel];
-    cell.accessoryView = toggle;
-  } else if (identifier == kSliderCell) {
-    UISlider *slider =
-        [[UISlider alloc] initWithFrame:CGRectMake(0, 0, 150, 0)];
-    slider.minimumValue = [self minimumButtonWidth];
-    slider.maximumValue = 268.0;
-    slider.value = self.signInButton.frame.size.width;
-    slider.enabled = self.signInButton.style != kGPPSignInButtonStyleIconOnly;
-
-    [slider addTarget:self
-               action:@selector(changeSignInButtonWidth:)
-        forControlEvents:UIControlEventValueChanged];
-    cell.accessoryView = slider;
-    slider.accessibilityIdentifier = [NSString stringWithFormat:@"%@ Slider", label];
-    self.signInButtonWidthSlider = slider;
-  }
-
-  cell.textLabel.text = label;
+//  cell.textLabel.text = label;
+    cell.textLabel.text = @"";
   return cell;
 }
 
-- (void)tableView:(UITableView *)tableView
-    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  [tableView deselectRowAtIndexPath:indexPath animated:YES];
-  UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-  NSString *label = selectedCell.textLabel.text;
-
-  DataPickerState *dataState = [_drilldownCellState objectForKey:label];
-  if (!dataState) {
-    return;
-  }
-
-  DataPickerViewController *dataPicker =
-      [[DataPickerViewController alloc] initWithNibName:nil
-                                                 bundle:nil
-                                              dataState:dataState];
-  dataPicker.navigationItem.title = label;
-
-  // Force the back button title to be 'Back'
-  UIBarButtonItem *newBackButton =
-      [[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                       style:UIBarButtonItemStyleBordered
-                                      target:nil
-                                      action:nil];
-  [[self navigationItem] setBackBarButtonItem:newBackButton];
-
-  if ([[GPPSignIn sharedInstance] authentication] &&
-      [label isEqualToString:kAppActivitiesCellLabel]) {
-    [self showSignOutAlertViewWithConfirmationBlock:^(void) {
-      [self.navigationController pushViewController:dataPicker animated:YES];
-    }
-                                        cancelBlock:nil];
-  } else {
-    [self.navigationController pushViewController:dataPicker animated:YES];
-  }
-}
+//- (void)tableView:(UITableView *)tableView
+//    didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//  UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+//  NSString *label = selectedCell.textLabel.text;
+//
+//  DataPickerState *dataState = [_drilldownCellState objectForKey:label];
+//  if (!dataState) {
+//    return;
+//  }
+//
+//  DataPickerViewController *dataPicker =
+//      [[DataPickerViewController alloc] initWithNibName:nil
+//                                                 bundle:nil
+//                                              dataState:dataState];
+//  dataPicker.navigationItem.title = label;
+//
+//  // Force the back button title to be 'Back'
+//  UIBarButtonItem *newBackButton =
+//      [[UIBarButtonItem alloc] initWithTitle:@"Back"
+//                                       style:UIBarButtonItemStyleBordered
+//                                      target:nil
+//                                      action:nil];
+//  [[self navigationItem] setBackBarButtonItem:newBackButton];
+//
+//  if ([[GPPSignIn sharedInstance] authentication] &&
+//      [label isEqualToString:kAppActivitiesCellLabel]) {
+//    [self showSignOutAlertViewWithConfirmationBlock:^(void) {
+//      [self.navigationController pushViewController:dataPicker animated:YES];
+//    }
+//                                        cancelBlock:nil];
+//  } else {
+//    [self.navigationController pushViewController:dataPicker animated:YES];
+//  }
+//}
 
 @end
