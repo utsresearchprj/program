@@ -16,12 +16,12 @@
 
 @end
 
-static const int kNumSections = 3;
+static const int kNumSections = 4;
 static const int kNumRowsPerBasicInfo = 5;
 static const int kNumRowsPerEmployer = 4;
 static const int kNumRowsPerSchool = 3;
 static NSString * const kSections[kNumSections] = {
-    @"BASIC INFORMATION", @"WORKING INFORMATION", @"EDUCATION INFORMATION" };
+    @"BASIC INFORMATION", @"WORKING INFORMATION", @"EDUCATION INFORMATION", @"LOCATION HISTORY" };
 static NSString * const kRowsOfBasicInfo[kNumRowsPerBasicInfo] = {
     @"DOB", @"Gender", @"Name", @"Relationship",@"Email" };
 static NSString * const kRowsPerEmployer[kNumRowsPerEmployer] = {
@@ -30,92 +30,75 @@ static NSString * const kRowsPerSchool[kNumRowsPerSchool] = {
     @"School", @"Start Date", @"End Date" };
 static NSString * const kNibName = @"EditProfileViewController";
 static NSString * const kTitleForEditScr = @"Edit Profile";
+static NSString * const kCurrentLoc = @"Current City";
+static NSString * const kPreviousLoc = @"Previous City";
 
 @implementation PrivacySettingViewController
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     
+    [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    //GTLServicePlus* plusService = [[[GTLServicePlus alloc] init] autorelease];
     
     self.arrayBasicInfo = [[NSMutableArray alloc]init];
     self.arrayWorkingInfo = [[NSMutableArray alloc]init];
     self.arrayEducationInfo = [[NSMutableArray alloc]init];
+    self.arrayLocationInfo = [[NSMutableArray alloc]init];
     self.Me = [[GTLPlusPerson alloc]init];
     
-//    GTLServicePlus* plusService = [[GTLServicePlus alloc]init];
-//    GTLServicePlus* plusService = [GPPSignIn sharedInstance].plusService;
-//    plusService.retryEnabled = YES;
     
-//    [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    [plusService setAuthorizer:appDelegate];
-//    [plusService setAuthorizer:static_auth];
-    
-//    GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
+//    GTLPlusPerson *person1 = [GPPSignIn sharedInstance].googlePlusUser;
 //    
-//    [plusService executeQuery:query
-//            completionHandler:^(GTLServiceTicket *ticket,
-//                                GTLPlusPerson *person,
-//                                NSError *error) {
-//                if (error) {
-//                    GTMLoggerError(@"Error: %@", error);
-//                } else {
-//                    
-//                    self.Me = person;
-//                    [self.arrayBasicInfo addObject:(person.birthday)];
-//                    [self.arrayBasicInfo addObject:(person.gender)];
-//                    [self.arrayBasicInfo addObject:(person.name)];
-//                    [self.arrayBasicInfo addObject:(person.relationshipStatus)];
-//                    [self.arrayBasicInfo addObject:([person.emails objectAtIndex:0]) ];
-//                    
-//                    [self.arrayWorkingInfo addObject:([person.organizations objectAtIndex:0])];
-//                }
-//            }];
-    
-    
-    GTLPlusPerson *person1 = [GPPSignIn sharedInstance].googlePlusUser;
-    self.Me = person1;
-    if(person1.birthday != nil)
-        [self.arrayBasicInfo addObject:(person1.birthday)];
-    else
-        [self.arrayBasicInfo addObject:@"NA"];
-    [self.arrayBasicInfo addObject:(person1.gender)];
-    [self.arrayBasicInfo addObject:(person1.displayName)];
-    if(person1.relationshipStatus != nil)
-        [self.arrayBasicInfo addObject:(person1.relationshipStatus)];
-    else
-        [self.arrayBasicInfo addObject:@"NA"];
-    [self.arrayBasicInfo addObject:([GPPSignIn sharedInstance].authentication.userEmail)];
-    
-    NSString* orgType = nil;
-    GTLPlusPersonOrganizationsItem* tempOrg = [[GTLPlusPersonOrganizationsItem alloc]init];
-    for (int i =0; i< person1.organizations.count;i++)
-    {
-        tempOrg = [person1.organizations objectAtIndex:i];
-        orgType = tempOrg.type;
-        if ( [orgType isEqualToString:@"work"])
-            [self.arrayWorkingInfo addObject:tempOrg];
-        else
-            [self.arrayEducationInfo addObject:tempOrg];
-    }
+//    
+//    
+//    self.Me = person1;
+//    if(person1.birthday != nil)
+//        [self.arrayBasicInfo addObject:(person1.birthday)];
+//    else
+//        [self.arrayBasicInfo addObject:@"NA"];
+//    [self.arrayBasicInfo addObject:(person1.gender)];
+//    [self.arrayBasicInfo addObject:(person1.displayName)];
+//    if(person1.relationshipStatus != nil)
+//        [self.arrayBasicInfo addObject:(person1.relationshipStatus)];
+//    else
+//        [self.arrayBasicInfo addObject:@"NA"];
+//    [self.arrayBasicInfo addObject:([GPPSignIn sharedInstance].authentication.userEmail)];
+//    
+//    NSString* orgType = nil;
+//    GTLPlusPersonOrganizationsItem* tempOrg = [[GTLPlusPersonOrganizationsItem alloc]init];
+//    for (int i =0; i< person1.organizations.count;i++)
+//    {
+//        tempOrg = [person1.organizations objectAtIndex:i];
+//        orgType = tempOrg.type;
+//        if ( [orgType isEqualToString:@"work"])
+//            [self.arrayWorkingInfo addObject:tempOrg];
+//        else
+//            [self.arrayEducationInfo addObject:tempOrg];
+//    }
     
     UIBarButtonItem *editProfile = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editProfileBt)];
     self.navigationItem.rightBarButtonItem = editProfile;
 
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//this event occurs everytime to navigate back and forth by navigation bar
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self refreshUserProfile];
+    //[self.tableView reloadData]; // to reload selected cell
 }
 
 #pragma mark - Table view data source
@@ -144,6 +127,9 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
         case 2:
             return ([self.arrayEducationInfo count]*kNumRowsPerSchool);
             break;
+        case 3:
+            return ([self.arrayLocationInfo count]);
+            break;
         default:
             return 0;
             break;
@@ -170,12 +156,16 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
     NSString* cellText = nil;
     NSString* cellLabel = nil;
     GTLPlusPersonOrganizationsItem* tempOrg = [[GTLPlusPersonOrganizationsItem alloc]init];
+    GTLPlusPersonPlacesLivedItem* tempPlace = [[GTLPlusPersonPlacesLivedItem alloc] init];
     
     switch (section) {
         case 0:
-            cellText = [self.arrayBasicInfo objectAtIndex:row];
-            cell.textLabel.text = kRowsOfBasicInfo[row];
-            cell.detailTextLabel.text = cellText;
+            if (self.arrayBasicInfo.count > 0)
+            {
+                cellText = [self.arrayBasicInfo objectAtIndex:row];
+                cell.textLabel.text = kRowsOfBasicInfo[row];
+                cell.detailTextLabel.text = cellText;
+            }
             break;
         case 1:
             tempOrg = [self.arrayWorkingInfo objectAtIndex:(row/kNumRowsPerEmployer)];
@@ -224,6 +214,19 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
             
             cell.textLabel.text = cellLabel;
             cell.detailTextLabel.text = cellText;
+            break;
+        case 3:
+            
+            if (self.arrayLocationInfo.count > 0)
+            {
+                tempPlace = [self.arrayLocationInfo objectAtIndex:row];
+                if([tempPlace.primary intValue] == true)
+                    cell.textLabel.text = kCurrentLoc;
+                else
+                    cell.textLabel.text = kPreviousLoc;
+                cell.detailTextLabel.text = tempPlace.value;
+            }
+
             break;
     }
     
@@ -298,4 +301,75 @@ static NSString * const kTitleForEditScr = @"Edit Profile";
     
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+#pragma mark - Helper methods
+
+- (void)refreshUserProfile
+{
+//    if(self.Me.displayName == nil)
+//        return;
+    
+    GTLServicePlus* plusService = [GPPSignIn sharedInstance].plusService;
+    plusService.retryEnabled = YES;
+    
+    [plusService setAuthorizer:[GPPSignIn sharedInstance].authentication];
+    
+    GTLQueryPlus *query = [GTLQueryPlus queryForPeopleGetWithUserId:@"me"];
+    
+    plusService.apiVersion = @"v1";
+    [plusService executeQuery:query
+            completionHandler:^(GTLServiceTicket *ticket,
+                                GTLPlusPerson *person,
+                                NSError *error) {
+                if (error) {
+                    GTMLoggerError(@"Error: %@", error);
+                } else {
+                    
+                    self.Me = person;
+                    
+                    [self.arrayBasicInfo removeAllObjects];
+                    [self.arrayWorkingInfo removeAllObjects];
+                    [self.arrayEducationInfo removeAllObjects];
+                    [self.arrayLocationInfo removeAllObjects];
+                    
+                    if(self.Me.birthday != nil)
+                        [self.arrayBasicInfo addObject:(self.Me.birthday)];
+                    else
+                        [self.arrayBasicInfo addObject:@"NA"];
+                    [self.arrayBasicInfo addObject:(self.Me.gender)];
+                    [self.arrayBasicInfo addObject:(self.Me.displayName)];
+                    if(self.Me.relationshipStatus != nil)
+                        [self.arrayBasicInfo addObject:(self.Me.relationshipStatus)];
+                    else
+                        [self.arrayBasicInfo addObject:@"NA"];
+                    [self.arrayBasicInfo addObject:([GPPSignIn sharedInstance].authentication.userEmail)];
+                    
+                    NSString* orgType = nil;
+                    GTLPlusPersonOrganizationsItem* tempOrg = [[GTLPlusPersonOrganizationsItem alloc]init];
+                    for (int i =0; i< self.Me.organizations.count;i++)
+                    {
+                        tempOrg = [self.Me.organizations objectAtIndex:i];
+                        orgType = tempOrg.type;
+                        if ( [orgType isEqualToString:@"work"])
+                            [self.arrayWorkingInfo addObject:tempOrg];
+                        else
+                            [self.arrayEducationInfo addObject:tempOrg];
+                    }
+                    
+                    //self.arrayLocationInfo = [self.Me.placesLived copy];
+                    for(int i = 0; i< self.Me.placesLived.count;i++)
+                    {
+                        [self.arrayLocationInfo addObject:[self.Me.placesLived objectAtIndex:i]];
+                    }
+
+                    //force table view to reload data 2nd time because in the first time the data is empty
+                    [self.tableView reloadData];
+                    
+                }
+            }];
+    
+}
+
 @end
+
+

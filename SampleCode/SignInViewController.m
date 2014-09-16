@@ -129,6 +129,7 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
   GPPSignIn *signIn = [GPPSignIn sharedInstance];
   signIn.shouldFetchGooglePlusUser = YES;
   signIn.shouldFetchGoogleUserEmail = YES;
+    
 
   // Sync the current sign-in configurations to match the selected
   // app activities in the app activity picker.

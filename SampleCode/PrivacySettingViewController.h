@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "GooglePlus/GooglePlus.h"
 
+@class GTLServicePlus;
+
 @interface PrivacySettingViewController : UITableViewController
 
 @property(strong,nonatomic) GTLPlusPerson *Me;
 @property(strong,nonatomic) NSMutableArray* arrayBasicInfo;
 @property(strong,nonatomic) NSMutableArray* arrayWorkingInfo;
 @property(strong,nonatomic) NSMutableArray* arrayEducationInfo;
+@property(strong,nonatomic) NSMutableArray* arrayLocationInfo;
 
 @end
