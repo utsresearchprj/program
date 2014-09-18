@@ -47,6 +47,7 @@ static NSString * const kAboutNibName = @"AboutViewController";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.menuArray = [NSArray arrayWithObjects:@"Facebook", @"Google +", nil];
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,9 +109,13 @@ static NSString * const kAboutNibName = @"AboutViewController";
             theImage = [UIImage imageNamed:@"IconG.png"];
         }
         cell.imageView.image = theImage;
+        
     }
     else if(section == 1)
+    {
         cell.textLabel.text = kStrAbout;
+        
+    }
     
     
     return cell;

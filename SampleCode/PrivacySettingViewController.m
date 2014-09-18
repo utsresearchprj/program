@@ -52,6 +52,8 @@ static NSString * const kPreviousLoc = @"Previous City";
     self.arrayLocationInfo = [[NSMutableArray alloc]init];
     self.Me = [[GTLPlusPerson alloc]init];
     
+    //hide seperator line if it is empty cell
+    self.tableView.tableFooterView = [[UIView alloc] init];
     
 //    GTLPlusPerson *person1 = [GPPSignIn sharedInstance].googlePlusUser;
 //    

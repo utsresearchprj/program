@@ -166,6 +166,9 @@ static NSString *const kCredentialsButtonAccessibilityIdentifier = @"Credentials
   [super viewDidLoad];
 
 //  self.credentialsButton.accessibilityIdentifier = kCredentialsButtonAccessibilityIdentifier;
+    
+    //hide seperator line if it is empty cell
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

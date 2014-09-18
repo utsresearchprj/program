@@ -36,6 +36,7 @@ static NSString * const kNibNames[kNumViewControllers] = {
   if (self) {
     self.title = @"Social Network Privacy Management";
   }
+    self.tableView.tableFooterView = [[UIView alloc] init];
   return self;
 }
 
