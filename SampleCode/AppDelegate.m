@@ -18,8 +18,8 @@
 
 #import "AppDelegate.h"
 
+#import <FacebookSDK/FacebookSDK.h>
 #import <GooglePlus/GooglePlus.h>
-#import "MasterViewController.h"
 #import "AccountViewController.h"
 
 @interface AppDelegate () <GPPDeepLinkDelegate>
@@ -28,18 +28,20 @@
 
 @implementation AppDelegate
 
+@synthesize fbAccount;
 // DO NOT USE THIS CLIENT ID. IT WILL NOT WORK FOR YOUR APP.
 // Please use the client ID created for you by Google.
 //clientID by project "quick sample" on Google Developer Console
 static NSString * const kClientID =
     @"886332375107-m9uqfghf0j6n447a6pet8dhfu0ncleki.apps.googleusercontent.com";
 
-
 #pragma mark Object life-cycle.
 
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+  [FBProfilePictureView class];
   // Set app's client ID for |GPPSignIn| and |GPPShare|.
   [GPPSignIn sharedInstance].clientID = kClientID;
 
@@ -71,9 +73,17 @@ static NSString * const kClientID =
               openURL:(NSURL *)url
     sourceApplication:(NSString *)sourceApplication
            annotation:(id)annotation {
-  return [GPPURLHandler handleURL:url
-                sourceApplication:sourceApplication
-                       annotation:annotation];
+    NSString *urlStr = [url absoluteString];
+    if ([urlStr rangeOfString:@"google"].location != NSNotFound) {
+        //NSLog(@"URL from Google");
+        return [GPPURLHandler handleURL:url
+                      sourceApplication:sourceApplication
+                             annotation:annotation];
+    }else if ([urlStr rangeOfString:@"facebook"].location != NSNotFound){
+        //NSLog(@"URL from Facebook");
+        return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    }
+    return FALSE;
 }
 
 #pragma mark - GPPDeepLinkDelegate
@@ -87,6 +97,18 @@ static NSString * const kClientID =
       cancelButtonTitle:@"OK"
       otherButtonTitles:nil];
   [alert show];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActive];
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+- (void) storeFBAccount: (FBAccount *) myFBAccount
+{
+    fbAccount = myFBAccount;
 }
 
 @end

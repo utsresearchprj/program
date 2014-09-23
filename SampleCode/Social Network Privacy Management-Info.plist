@@ -40,12 +40,17 @@
 			<string>com.google.GooglePlusPlatformSample</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb690713350939993</string>
 				<string>com.google.GooglePlusPlatformSample</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FacebookAppID</key>
+	<string>690713350939993</string>
+	<key>FacebookDisplayName</key>
+	<string>LoginUIControlSample</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

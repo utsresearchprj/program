@@ -17,7 +17,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FBAccount.h"
 @class GTMOAuth2Authentication;
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate>
@@ -27,4 +27,7 @@
 // The navigation controller.
 @property(strong, nonatomic) UINavigationController *navigationController;
 
+@property(nonatomic, copy) FBAccount * fbAccount;
+
+- (void) storeFBAccount: (FBAccount *) myFBAccount;
 @end

@@ -22,7 +22,7 @@
 
 static const int kNumViewControllers = 3;
 static NSString * const kMenuOptions[kNumViewControllers] = {
-    @"Awareness",@"Sign in", @"Profile" };
+    @"Misleading",@"Sign in", @"Profile" };
 static NSString * const kUnselectableMenuOptions[kNumViewControllers] = {
     nil, nil, @"Profile"};
 static NSString * const kNibNames[kNumViewControllers] = {

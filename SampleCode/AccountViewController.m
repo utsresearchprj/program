@@ -8,6 +8,7 @@
 
 #import "AccountViewController.h"
 #import "MasterViewController.h"
+#import "FBAccountSignInViewController.h"
 
 
 @interface AccountViewController ()
@@ -20,7 +21,7 @@
 
 static const int kNumViewControllers = 2;
 static NSString * const kNibNames[kNumViewControllers] = {
-    @"FBViewController", @"MasterViewController"};
+    @"FBAccountSignInViewController", @"MasterViewController"};
 static NSString * const kMenuOptions[kNumViewControllers] = {
     @"Facebook", @"Google +" };
 
@@ -48,6 +49,8 @@ static NSString * const kAboutNibName = @"AboutViewController";
     
     self.menuArray = [NSArray arrayWithObjects:@"Facebook", @"Google +", nil];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    self.navigationController.toolbarHidden = false;
 }
 
 - (void)didReceiveMemoryWarning

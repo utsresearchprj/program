@@ -7,7 +7,7 @@
 //
 
 #import "PrivacySettingViewController.h"
-#import <GooglePlus/GooglePlus.h>
+//#import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
 #import "AppDelegate.h"
 
