@@ -55,6 +55,21 @@ static NSString * const kPreviousLoc = @"Previous City";
     //hide seperator line if it is empty cell
     self.tableView.tableFooterView = [[UIView alloc] init];
     
+    //create Edit button on navigation bar
+    UIBarButtonItem *editProfile = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editProfileBt)];
+    self.navigationItem.rightBarButtonItem = editProfile;
+
+    
+    //create Email button on toolbar
+    self.navigationController.toolbarHidden = false;
+    UIBarButtonItem *EmailButtonItem = [[UIBarButtonItem alloc]
+                                                initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                target:self action:@selector(sendMailBt)];
+    self.toolbarItems = [NSArray arrayWithObjects:EmailButtonItem,nil];
+    
+    
+    
+    
 //    GTLPlusPerson *person1 = [GPPSignIn sharedInstance].googlePlusUser;
 //    
 //    
@@ -84,9 +99,7 @@ static NSString * const kPreviousLoc = @"Previous City";
 //            [self.arrayEducationInfo addObject:tempOrg];
 //    }
     
-    UIBarButtonItem *editProfile = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editProfileBt)];
-    self.navigationItem.rightBarButtonItem = editProfile;
-
+   
     
 }
 
@@ -302,6 +315,29 @@ static NSString * const kPreviousLoc = @"Previous City";
     controller.navigationItem.title = kTitleForEditScr;
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+- (void)sendMailBt {
+    
+    // Email Subject
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    //NSArray *toRecipents = [NSArray arrayWithObject:@"khanhtruong@yahoo.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:YES];
+    //[mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Helper methods

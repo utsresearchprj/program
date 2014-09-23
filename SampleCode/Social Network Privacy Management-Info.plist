@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>ja_JP</string>
+	<string>en_GB</string>
 	<key>CFBundleDisplayName</key>
 	<string>Privacy Mngt</string>
 	<key>CFBundleExecutable</key>

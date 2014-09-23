@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "GooglePlus/GooglePlus.h"
+#import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class GTLServicePlus;
 
-@interface PrivacySettingViewController : UITableViewController
+@interface PrivacySettingViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @property(strong,nonatomic) GTLPlusPerson *Me;
 @property(strong,nonatomic) NSMutableArray* arrayBasicInfo;
