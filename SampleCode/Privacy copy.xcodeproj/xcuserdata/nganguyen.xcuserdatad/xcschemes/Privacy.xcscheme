@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0043C7991580045B000DF02E"
-               BuildableName = "GooglePlusPlatformSample.app"
-               BlueprintName = "Social Network Privacy Management"
-               ReferencedContainer = "container:Social Network Privacy Management.xcodeproj">
+               BuildableName = "PrivacyMngt.app"
+               BlueprintName = "Privacy"
+               ReferencedContainer = "container:Privacy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0043C7991580045B000DF02E"
-            BuildableName = "GooglePlusPlatformSample.app"
-            BlueprintName = "Social Network Privacy Management"
-            ReferencedContainer = "container:Social Network Privacy Management.xcodeproj">
+            BuildableName = "PrivacyMngt.app"
+            BlueprintName = "Privacy"
+            ReferencedContainer = "container:Privacy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0043C7991580045B000DF02E"
-            BuildableName = "GooglePlusPlatformSample.app"
-            BlueprintName = "Social Network Privacy Management"
-            ReferencedContainer = "container:Social Network Privacy Management.xcodeproj">
+            BuildableName = "PrivacyMngt.app"
+            BlueprintName = "Privacy"
+            ReferencedContainer = "container:Privacy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0043C7991580045B000DF02E"
-            BuildableName = "GooglePlusPlatformSample.app"
-            BlueprintName = "Social Network Privacy Management"
-            ReferencedContainer = "container:Social Network Privacy Management.xcodeproj">
+            BuildableName = "PrivacyMngt.app"
+            BlueprintName = "Privacy"
+            ReferencedContainer = "container:Privacy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

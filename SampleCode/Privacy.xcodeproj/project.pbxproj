@@ -53,18 +53,18 @@
 		28ADFF5219D1108400CD9351 /* FBAccountSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28ADFF4519D1108300CD9351 /* FBAccountSignInViewController.xib */; };
 		28ADFF5319D1108400CD9351 /* Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFF4719D1108400CD9351 /* Property.m */; };
 		28ADFF5419D1108400CD9351 /* WorkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFF4919D1108400CD9351 /* WorkInfo.m */; };
-		2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A26056F1795C46B00A17CAA /* DataPickerState.m */; };
+		28ADFF8319D372CE00CD9351 /* AuthInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFF7D19D372CE00CD9351 /* AuthInspectorViewController.m */; };
+		28ADFF8419D372CE00CD9351 /* DataPickerState.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFF7F19D372CE00CD9351 /* DataPickerState.m */; };
+		28ADFF8519D372CE00CD9351 /* DataPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ADFF8119D372CE00CD9351 /* DataPickerViewController.m */; };
+		28ADFF8619D372CE00CD9351 /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28ADFF8219D372CE00CD9351 /* DataPickerViewController.xib */; };
 		2A4124CD1784A2D000CB0496 /* PlaceholderAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */; };
 		2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */; };
-		2A5857A2178DCDD000C84F01 /* DataPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A58579F178DCDD000C84F01 /* DataPickerViewController.m */; };
-		2A5857A3178DCDD000C84F01 /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A5857A0178DCDD000C84F01 /* DataPickerViewController.xib */; };
 		2A60BD2017D128960091A09C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60BD1F17D128960091A09C /* MobileCoreServices.framework */; };
 		2A60BD2417D142FE0091A09C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60BD2317D142FE0091A09C /* CoreMotion.framework */; };
 		2ABEB957178B3E6C00371CF2 /* EditableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABEB956178B3E6C00371CF2 /* EditableCell.m */; };
 		8E6D7D1417BA9DFA00FF96DE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6D7D1317BA9DFA00FF96DE /* AssetsLibrary.framework */; };
 		8E6D7D1617BA9DFF00FF96DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6D7D1517BA9DFF00FF96DE /* CoreLocation.framework */; };
 		8E6D7D1817BA9E0700FF96DE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6D7D1717BA9E0700FF96DE /* MediaPlayer.framework */; };
-		D92939E417A04DA00024AA91 /* AuthInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D92939E317A04DA00024AA91 /* AuthInspectorViewController.m */; };
 		D973B402158ABC1F0083A4B5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D973B401158ABC1F0083A4B5 /* MessageUI.framework */; };
 		D997D0F1174ED53B00AE561F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D997D0F0174ED53B00AE561F /* CoreText.framework */; };
 		D9A49D9F1720DD5E009C6DE2 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A49D9B1720DD5E009C6DE2 /* Default@2x~iphone.png */; };
@@ -79,7 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0043C79A1580045B000DF02E /* GooglePlusPlatformSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglePlusPlatformSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0043C79A1580045B000DF02E /* privacymngt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = privacymngt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0043C79E1580045B000DF02E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0043C7A01580045B000DF02E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0043C7A21580045B000DF02E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,13 +139,15 @@
 		28ADFF4719D1108400CD9351 /* Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Property.m; sourceTree = SOURCE_ROOT; };
 		28ADFF4819D1108400CD9351 /* WorkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkInfo.h; sourceTree = SOURCE_ROOT; };
 		28ADFF4919D1108400CD9351 /* WorkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkInfo.m; sourceTree = SOURCE_ROOT; };
-		2A26056E1795C46B00A17CAA /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
-		2A26056F1795C46B00A17CAA /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
+		28ADFF7C19D372CE00CD9351 /* AuthInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInspectorViewController.h; sourceTree = SOURCE_ROOT; };
+		28ADFF7D19D372CE00CD9351 /* AuthInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInspectorViewController.m; sourceTree = SOURCE_ROOT; };
+		28ADFF7E19D372CE00CD9351 /* DataPickerState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerState.h; sourceTree = SOURCE_ROOT; };
+		28ADFF7F19D372CE00CD9351 /* DataPickerState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerState.m; sourceTree = SOURCE_ROOT; };
+		28ADFF8019D372CE00CD9351 /* DataPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerViewController.h; sourceTree = SOURCE_ROOT; };
+		28ADFF8119D372CE00CD9351 /* DataPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerViewController.m; sourceTree = SOURCE_ROOT; };
+		28ADFF8219D372CE00CD9351 /* DataPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A4124CC1784A2D000CB0496 /* PlaceholderAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceholderAvatar.png; path = Resources/PlaceholderAvatar.png; sourceTree = SOURCE_ROOT; };
 		2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataPickerDictionary.plist; sourceTree = SOURCE_ROOT; };
-		2A58579E178DCDD000C84F01 /* DataPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPickerViewController.h; sourceTree = SOURCE_ROOT; };
-		2A58579F178DCDD000C84F01 /* DataPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPickerViewController.m; sourceTree = SOURCE_ROOT; };
-		2A5857A0178DCDD000C84F01 /* DataPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerViewController.xib; sourceTree = SOURCE_ROOT; };
 		2A60BD1F17D128960091A09C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2A60BD2317D142FE0091A09C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		2ABEB955178B3E6C00371CF2 /* EditableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableCell.h; sourceTree = SOURCE_ROOT; };
@@ -153,13 +155,11 @@
 		8E6D7D1317BA9DFA00FF96DE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8E6D7D1517BA9DFF00FF96DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E6D7D1717BA9E0700FF96DE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		D92939E217A04DA00024AA91 /* AuthInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthInspectorViewController.h; sourceTree = SOURCE_ROOT; };
-		D92939E317A04DA00024AA91 /* AuthInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthInspectorViewController.m; sourceTree = SOURCE_ROOT; };
 		D973B401158ABC1F0083A4B5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D997D0F0174ED53B00AE561F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		D9A49D9B1720DD5E009C6DE2 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iphone.png"; path = "Resources/Default@2x~iphone.png"; sourceTree = SOURCE_ROOT; };
 		D9A49D9C1720DD5E009C6DE2 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone.png"; path = "Resources/Default~iphone.png"; sourceTree = SOURCE_ROOT; };
-		D9EE74B1158A8E0500EC1D05 /* Social Network Privacy Management-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Social Network Privacy Management-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D9EE74B1158A8E0500EC1D05 /* Privacy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Privacy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D9EE74B2158A8E0500EC1D05 /* GooglePlusSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GooglePlusSample-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		D9EE74B3158A8E0500EC1D05 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		D9EE74B4158A8E0500EC1D05 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -213,7 +213,7 @@
 		0043C79B1580045B000DF02E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0043C79A1580045B000DF02E /* GooglePlusPlatformSample.app */,
+				0043C79A1580045B000DF02E /* privacymngt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -246,6 +246,13 @@
 		0043C7A41580045B000DF02E /* Social Network Privacy Management */ = {
 			isa = PBXGroup;
 			children = (
+				28ADFF7C19D372CE00CD9351 /* AuthInspectorViewController.h */,
+				28ADFF7D19D372CE00CD9351 /* AuthInspectorViewController.m */,
+				28ADFF7E19D372CE00CD9351 /* DataPickerState.h */,
+				28ADFF7F19D372CE00CD9351 /* DataPickerState.m */,
+				28ADFF8019D372CE00CD9351 /* DataPickerViewController.h */,
+				28ADFF8119D372CE00CD9351 /* DataPickerViewController.m */,
+				28ADFF8219D372CE00CD9351 /* DataPickerViewController.xib */,
 				28ADFF3719D1108300CD9351 /* BasicInfo.h */,
 				28ADFF3819D1108300CD9351 /* BasicInfo.m */,
 				28ADFF3919D1108300CD9351 /* BasicInformationViewCell.h */,
@@ -276,14 +283,7 @@
 				28480FC219B72F27001DBBDB /* AboutViewController.h */,
 				28480FC319B72F27001DBBDB /* AboutViewController.m */,
 				28480FC419B72F27001DBBDB /* AboutViewController.xib */,
-				D92939E217A04DA00024AA91 /* AuthInspectorViewController.h */,
-				D92939E317A04DA00024AA91 /* AuthInspectorViewController.m */,
 				2A58579D178DCDD000C84F01 /* DataPickerDictionary.plist */,
-				2A26056E1795C46B00A17CAA /* DataPickerState.h */,
-				2A26056F1795C46B00A17CAA /* DataPickerState.m */,
-				2A58579E178DCDD000C84F01 /* DataPickerViewController.h */,
-				2A58579F178DCDD000C84F01 /* DataPickerViewController.m */,
-				2A5857A0178DCDD000C84F01 /* DataPickerViewController.xib */,
 				2ABEB955178B3E6C00371CF2 /* EditableCell.h */,
 				2ABEB956178B3E6C00371CF2 /* EditableCell.m */,
 				28480FB519B5FDC1001DBBDB /* EditProfileViewController.h */,
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				00F70E82158006DC0077799E /* main.m */,
-				D9EE74B1158A8E0500EC1D05 /* Social Network Privacy Management-Info.plist */,
+				D9EE74B1158A8E0500EC1D05 /* Privacy-Info.plist */,
 				D9EE74B2158A8E0500EC1D05 /* GooglePlusSample-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -343,9 +343,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0043C7991580045B000DF02E /* Social Network Privacy Management */ = {
+		0043C7991580045B000DF02E /* Privacy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0043C7B21580045B000DF02E /* Build configuration list for PBXNativeTarget "Social Network Privacy Management" */;
+			buildConfigurationList = 0043C7B21580045B000DF02E /* Build configuration list for PBXNativeTarget "Privacy" */;
 			buildPhases = (
 				0043C7961580045B000DF02E /* Sources */,
 				0043C7971580045B000DF02E /* Frameworks */,
@@ -355,9 +355,9 @@
 			);
 			dependencies = (
 			);
-			name = "Social Network Privacy Management";
+			name = Privacy;
 			productName = GooglePlusSample;
-			productReference = 0043C79A1580045B000DF02E /* GooglePlusPlatformSample.app */;
+			productReference = 0043C79A1580045B000DF02E /* privacymngt.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -369,7 +369,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "";
 			};
-			buildConfigurationList = 0043C7941580045B000DF02E /* Build configuration list for PBXProject "Social Network Privacy Management" */;
+			buildConfigurationList = 0043C7941580045B000DF02E /* Build configuration list for PBXProject "Privacy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -466,7 +466,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0043C7991580045B000DF02E /* Social Network Privacy Management */,
+				0043C7991580045B000DF02E /* Privacy */,
 			);
 		};
 /* End PBXProject section */
@@ -477,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9EE74C4158A8E0500EC1D05 /* MasterViewController.xib in Resources */,
+				28ADFF8619D372CE00CD9351 /* DataPickerViewController.xib in Resources */,
 				28480FBE19B72C03001DBBDB /* Icon-72.png in Resources */,
 				28480F9619B13955001DBBDB /* privacy.png in Resources */,
 				28480F9E19B15313001DBBDB /* PrivacySettingViewController.xib in Resources */,
@@ -505,7 +506,6 @@
 				2A5857A1178DCDD000C84F01 /* DataPickerDictionary.plist in Resources */,
 				28ADFF4E19D1108400CD9351 /* BasicInformationViewController.xib in Resources */,
 				28ADFF4C19D1108400CD9351 /* BasicInformationViewCell.xib in Resources */,
-				2A5857A3178DCDD000C84F01 /* DataPickerViewController.xib in Resources */,
 				28480F8219ADBEE9001DBBDB /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,27 +517,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28ADFF8519D372CE00CD9351 /* DataPickerViewController.m in Sources */,
 				28480F9D19B15313001DBBDB /* PrivacySettingViewController.m in Sources */,
 				28ADFF5419D1108400CD9351 /* WorkInfo.m in Sources */,
 				28ADFF5019D1108400CD9351 /* FBAccount.m in Sources */,
 				00F70E83158006DC0077799E /* main.m in Sources */,
 				28ADFF4A19D1108400CD9351 /* BasicInfo.m in Sources */,
 				D9EE74C2158A8E0500EC1D05 /* AppDelegate.m in Sources */,
+				28ADFF8319D372CE00CD9351 /* AuthInspectorViewController.m in Sources */,
 				28ADFF4D19D1108400CD9351 /* BasicInformationViewController.m in Sources */,
 				28480FB319B5E4A7001DBBDB /* AwarenessViewController.m in Sources */,
 				D9EE74C3158A8E0500EC1D05 /* MasterViewController.m in Sources */,
 				D9EE74C9158A8E0500EC1D05 /* SignInViewController.m in Sources */,
 				28480F8E19AFD2FA001DBBDB /* AccountViewController.m in Sources */,
 				28ADFF5319D1108400CD9351 /* Property.m in Sources */,
+				28ADFF8419D372CE00CD9351 /* DataPickerState.m in Sources */,
 				28ADFF5119D1108400CD9351 /* FBAccountSignInViewController.m in Sources */,
 				28480FB819B5FDC1001DBBDB /* EditProfileViewController.m in Sources */,
 				2ABEB957178B3E6C00371CF2 /* EditableCell.m in Sources */,
 				28480FC519B72F27001DBBDB /* AboutViewController.m in Sources */,
 				28ADFF4B19D1108400CD9351 /* BasicInformationViewCell.m in Sources */,
 				28ADFF4F19D1108400CD9351 /* EducationInfo.m in Sources */,
-				2A5857A2178DCDD000C84F01 /* DataPickerViewController.m in Sources */,
-				2A2605701795C46B00A17CAA /* DataPickerState.m in Sources */,
-				D92939E417A04DA00024AA91 /* AuthInspectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,8 +621,8 @@
 					/Users/nganguyen/Documents/03.UTS/03.Semester3/ResearchProject/xCodeProj/PrivacyMngtMerge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Social Network Privacy Management-Prefix.pch";
-				INFOPLIST_FILE = "Social Network Privacy Management-Info.plist";
+				GCC_PREFIX_HEADER = "Privacy-Prefix.pch";
+				INFOPLIST_FILE = "Privacy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -630,7 +630,7 @@
 					/Users/nganguyen/Documents/03.UTS/03.Semester3/ResearchProject/xCodeProj/PrivacyMngtMerge/GooglePlus.framework/Versions/A,
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = GooglePlusPlatformSample;
+				PRODUCT_NAME = privacymngt;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -647,8 +647,8 @@
 					/Users/nganguyen/Documents/03.UTS/03.Semester3/ResearchProject/xCodeProj/PrivacyMngtMerge,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Social Network Privacy Management-Prefix.pch";
-				INFOPLIST_FILE = "Social Network Privacy Management-Info.plist";
+				GCC_PREFIX_HEADER = "Privacy-Prefix.pch";
+				INFOPLIST_FILE = "Privacy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,7 +656,7 @@
 					/Users/nganguyen/Documents/03.UTS/03.Semester3/ResearchProject/xCodeProj/PrivacyMngtMerge/GooglePlus.framework/Versions/A,
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = GooglePlusPlatformSample;
+				PRODUCT_NAME = privacymngt;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -665,7 +665,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0043C7941580045B000DF02E /* Build configuration list for PBXProject "Social Network Privacy Management" */ = {
+		0043C7941580045B000DF02E /* Build configuration list for PBXProject "Privacy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0043C7B01580045B000DF02E /* Debug */,
@@ -674,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0043C7B21580045B000DF02E /* Build configuration list for PBXNativeTarget "Social Network Privacy Management" */ = {
+		0043C7B21580045B000DF02E /* Build configuration list for PBXNativeTarget "Privacy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0043C7B31580045B000DF02E /* Debug */,

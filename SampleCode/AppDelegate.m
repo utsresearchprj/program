@@ -31,9 +31,12 @@
 @synthesize fbAccount;
 // DO NOT USE THIS CLIENT ID. IT WILL NOT WORK FOR YOUR APP.
 // Please use the client ID created for you by Google.
+
 //clientID by project "quick sample" on Google Developer Console
-static NSString * const kClientID =
-    @"886332375107-m9uqfghf0j6n447a6pet8dhfu0ncleki.apps.googleusercontent.com";
+//static NSString * const kClientID = @"886332375107-m9uqfghf0j6n447a6pet8dhfu0ncleki.apps.googleusercontent.com";
+
+//clientID by project "Privacy Management" on Google Developer Console
+static NSString * const kClientID = @"717769283079-7t5g6h5al448t1u5jp47n46cvjfmsqaq.apps.googleusercontent.com";
 
 #pragma mark Object life-cycle.
 

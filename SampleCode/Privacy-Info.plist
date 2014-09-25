@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en_GB</string>
 	<key>CFBundleDisplayName</key>
-	<string>Privacy Mngt</string>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -20,7 +20,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.google.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.ausfresh.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -37,11 +37,11 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.google.GooglePlusPlatformSample</string>
+			<string>com.ausfresh.privacymngt</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb690713350939993</string>
-				<string>com.google.GooglePlusPlatformSample</string>
+				<string>com.ausfresh.privacymngt</string>
 			</array>
 		</dict>
 	</array>
